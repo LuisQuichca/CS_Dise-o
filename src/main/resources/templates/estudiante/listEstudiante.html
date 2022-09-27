@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Favicon -->
+<link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon" />
+<!-- Custom styles -->
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link th:href="@{/css/main.css}" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" />
+<title>CloseStudy</title>
+</head>
+<body class="bg-light">
+	<div class="page-flex">
+		<div th:replace="fragments/sidebar :: sidebarCS"></div>
+		<div class="main-wrapper">
+
+			<nav class="navbar navbar-expand-md navbar-dark bg-secondary sticky-top">
+		<div class="container-fluid">
+			
+			<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+				
+					<form th:action="@{/logout}"method="post">
+					<div class="nav-item ms-3">
+					<span th:if="${session.estudiante!=null}">Hola <span class="font-italic" th:text="${session.estudiante.nomEstudiante}"></span></span>
+					<button type="submit"class="btn btn-dark button text-uppercase btn-padding-x-sm fw-bold">Cerrar sesion</button>	
+					</div >
+					</form>
+				
+			</div>
+		</div>
+		</nav>
+		<br><br>
+			<div class="container">
+    		<form id="myform">
+    			<div class="row clearfix">
+    				<div class="col-md-12 column">
+
+    				
+    					<a 	style="border-bottom-color: green" th:href="@{/estudiante/listaestudiante}"
+    						id="add-row" type="button" class="btn btn-primary btn-md left-block">
+    						<span class="glyphicon glyphicon-search"></span> Ver Avisos publicados
+    					</a>
+						
+    					<table class="table table-bordered table-hover table-striped" id="tab_logic">
+    						<thead>
+    							<tr>
+    								<th class="text-center">CODIGO</th>
+    								<th class="text-center">Nombre</th>
+    								<th class="text-center">Apellido</th>
+    								<th class="text-center">DNI</th>
+    								<th class="text-center">Edad</th>
+    								<th class="text-center">Cel</th>
+    								<th class="text-center">Email</th>
+    								<th class="text-center">Universidad</th>
+    								<th class="text-center">Operaciond</th>
+    							</tr>
+    						</thead>
+    						<tbody>
+    							<tr th:each="estudiante: ${listaEstudiantes}">
+    								<td th:text="${estudiante.idEstudiante}"></td>
+    								<td th:text="${estudiante.nomEstudiante}"></td>
+    								<td th:text="${estudiante.apeEstudiante}"></td>
+    								<td th:text="${estudiante.dniEstudiante}"></td>
+    								<td th:text="${estudiante.edadEstudiante}"></td>
+    								<td th:text="${estudiante.celEstudiante}"></td>
+    								<td th:text="${estudiante.emailEstudiante}"></td>
+    							   	<td th:text="${estudiante.universidad.nomUniversidad}"></td>					
+    								<td><a th:href="@{'/estudiante/modificar/'}+${estudiante.idEstudiante}"class="btn btn-outline-info" role="button">Editar</a></td>
+    							</tr>
+    						</tbody>
+    					</table> 
+    					
+    					
+    				</div>
+    			</div>
+    			<div th:if="${mensaje}" class="alert alert-danger">
+    				<p th:text="${mensaje}"></p>
+    			</div>
+    		</form>
+    	</div>
+
+    	<div th:replace="fragments/footer :: footer"></div>
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" type="image/jpg" href="./favicon.ico" />
+	<link th:href="@{/css/main.css}" rel="stylesheet" />
+	<link th:href="@{/css/landing.css}" rel="stylesheet" />
+		<title>CLOSE STUDY</title>
+</head>
+<body>
+	<!--Navbar-->
+	<nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"> <img
+				th:src="@{/imagenes/logo.png}" alt="logo-share" height="80" />
+				
+			</a>
+			<h3 class="principal-logotext text-white">
+					Close Study
+			</h3>
+			<!--Navbar:button-collapse-->
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!--Navbar:items-menu-->
+			<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+				
+				<ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+					<li class="nav-item ms-3"><a
+						class="nav-link text-white text-uppercase" th:href="@{auth/registroE}">Registrate como estudiante</a>
+						
+					</li>
+					<li class="nav-item ms-3"><a
+						class="nav-link text-white text-uppercase" th:href="@{auth/registroA}">Registrate como arrendador</a>
+					</li>
+					<li class="nav-item ms-3"><a
+						th:href="@{/auth/login}">
+							<button type="button"
+								class="btn btn-dark button text-uppercase btn-padding-x-sm fw-bold">
+								Login</button>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--Header-->
+	<header class="principal-bg bg-primary" style="background-image: url('https://media.discordapp.net/attachments/700107742718722100/908376065867677697/limpio.jpg?width=1800&height=700');"> >
+		<!--Welcome-->
+		<div class="container p-4">
+			<div class="row">
+				<div class="col-lg-5 col-md-12 mt-4 principal-left">
+					<h1 class="text-white">
+						Las mejores habitaciones al mejor precio 
+					</h1>
+				</div>
+				<div class="col-lg-5 col-md-12 text-center">
+					<img  th:src="@{/imagenes/portadanew.png}" alt=""
+						class="img-fluid big-principal-img ms-2" />
+				</div>
+			</div>
+		</div>
+	
+		<div class="wave" id="features"></div>
+	</header>
+	<main class="main">
+		
+		<section class="features animated p-5">
+			<h2 class="secondary-title text-primary text-center">Conseguir una habitacion es muy facil con CloseStudy</h2>
+			<p class="text-dark text-center">Encuentra de todo para ti</p>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12">
+						<div
+							class="d-flex flex-column justify-content-center p-xs-3 p-xl-5 feature-item-container">
+							<div class="feature-item animated">
+								<div class="p-2 text-center">
+									<img th:src="@{/imagenes/habitaciones.png}" alt=""
+										class="img-fluid feature-img" />
+								</div>
+								<div class="p-2 text-center fw-bold">Publica tus avisos</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12">
+						<div
+							class="d-flex flex-column justify-content-center p-xs-3 p-xl-5 feature-item-container">
+							<div class="feature-item">
+								<div class="p-2 text-center">
+									<img th:src="@{/imagenes/buscar.png}" alt=""
+										class="img-fluid feature-img" />
+								</div>
+								<div class="p-2 text-center fw-bold">Encuentra habitaciones</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-12">
+						<div
+							class="d-flex flex-column justify-content-center p-xs-3 p-xl-5 feature-item-container">
+							<div class="feature-item animated">
+								<div class="p-2 text-center">
+									<img th:src="@{/imagenes/arrendadores.png}" alt=""
+										class="img-fluid feature-img" />
+								</div>
+								<div class="p-2 text-center fw-bold">Encuentra a tu rommate</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--Experience-->
+		<section class="experience bg-primary p-5" id="experience">
+			<h2 class="secondary-title text-center text-white animated">Nosotros</h2>
+			<div class="text-white text-center animated">Somos desarrolladores de ISI en la UPC</div>
+			<div class="container animated">
+				<div class="row mt-4">
+					<div class="col-6 col-sm-6 col-lg-4 animated">
+						<div class="d-flex flex-column justify-content-center">
+							<div
+								class="
+                                        description
+                                        border-end
+                                        d-flex
+                                        flex-column
+                                        justify-content-center
+                                        align-items-center
+                                    ">
+								<div>
+									<div class="text-center h3 fw-bold text-white number">Developer</div>
+									<div class="p-1 text-center text-white">Salvador</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-sm-6 col-lg-4">
+						<div class="d-flex flex-column justify-content-center">
+							<div
+								class="
+                                        description
+                                        border-end
+                                        d-flex
+                                        flex-column
+                                        justify-content-center
+                                        align-items-center
+                                    ">
+								<div>
+									<div class="text-center h3 fw-bold text-white number">Developer</div>
+									<div class="p-1 text-center text-white">Luis</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-6 col-sm-6 col-lg-4 animated">
+						<div class="d-flex flex-column justify-content-center">
+							<div
+								class="
+                                        description
+                                        border-end
+                                        d-flex
+                                        flex-column
+                                        justify-content-center
+                                        align-items-center
+                                    ">
+								<div>
+									<div class="text-center h3 fw-bold text-white number">Developer</div>
+									<div class="p-1 text-center text-white">Ruben</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<!-- Footer -->
+	<footer class="text-center text-lg-start bg-dark text-white p-5">
+		<!-- Section: Links  -->
+		<section class="">
+			<div class="container text-left text-md-start">
+				<!-- Grid row -->
+				<div class="row">
+					<div class="col-md-5">
+						<!-- Content -->
+						<h6 class="text-uppercase fw-bold mb-4">
+							<i class="fas fa-gem mr-3"></i><img
+								th:src="@{/imagenes/logo.png}" alt="logo-share" height="80" />
+						</h6>
+						<p class="text-left description">Code Team es una empresa que brinda servicios de promocion y busqueda de habitaciones</p>
+					</div>
+					<div class="col-md-3">
+						<!-- Links -->
+						<h6 class="text-left fw-bold mb-4">Menú</h6>
+						<p>
+							<a href="#!" class="text-reset">Características</a>
+						</p>
+						<p>
+							<a href="#!" class="text-reset">Servicios</a>
+						</p>
+						<p>
+							<a href="#!" class="text-reset">Nosotros</a>
+						</p>
+						
+					</div>
+					<div class="col-md-4">
+						<!-- Links -->
+						<h6 class="fw-bold mb-4">Contacto</h6>
+						<p class="d-flex">
+							<i class="bi bi-envelope-fill mr-2"></i> <span>
+								contacto@closestudy.com.pe </span>
+						</p>
+						<p class="d-flex">
+							<i class="bi bi-telephone-fill mr-2"></i> <span>
+								+51 984556565</span>
+						</p>
+						
+					</div>
+					<!-- Copyright -->
+					<div class="col-xs-12 text-left p-3">© Grupo CodeTeam UPC-PW-2021-02</div>
+					<!-- Copyright -->
+				</div>
+			</div>
+		</section>
+	</footer>
+	<!-- Footer -->
+	<script src="./js/bootstrap.bundle.min.js"></script>
+	<script src="./js/index.js"></script>
+</body>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+	crossorigin="anonymous" type=""></script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Menu</title>
+</head>
+<body>
+	<aside th:fragment="sidebarCS" class="sidebar bg-primary">
+		<div class="sidebar-start">
+			<div class="sidebar-head">
+				<a href="#" class="logo-wrapper" title="Home"> <img
+					th:src="@{/imagenes/logo.png}" alt="" height="50" />
+					<a class="text-decoration-none" th:href="@{/}">Close Study</a>
+				</a>
+				
+				<div class="sidebar-toggle bg-dark" type="button">
+					<span class="bi-list fs-5 text-white"></span> <span class="sr-only">Close Study</span>
+				</div>
+			</div>
+			<div class="sidebar-body">
+				<ul class="sidebar-body-menu list-unstyled">
+					<li><a class="text-decoration-none" th:href="@{/arrendador/listar}"><span
+							class="icon bi bi-card-checklist fs-5" aria-hidden="true"></span>Arrendador</a></li>
+					<li><a class="text-decoration-none" th:href="@{/estudiante/listar}"><span
+							class="icon bi bi-card-checklist fs-5" aria-hidden="true"></span>Estudiante</a></li>
+					<li><a class="text-decoration-none" th:href="@{/habitacion/listar}"><span
+							class="icon bi bi-card-checklist fs-5" aria-hidden="true"></span>Habitaciones</a></li>
+					<li><a class="text-decoration-none" th:href="@{/aviso/listar}"><span
+							class="icon bi bi-card-checklist fs-5" aria-hidden="true"></span>Avisos</a></li>
+
+					<li><a class="text-decoration-none" th:href="@{/interes/listar}"><span
+							class="icon bi bi-card-checklist fs-5" aria-hidden="true"></span>Intereses</a></li>
+						
+				</ul>
+			</div>
+		</div>
+	</aside>
+</body>
+</html>

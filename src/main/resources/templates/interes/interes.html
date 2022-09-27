@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Favicon -->
+<link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon" />
+<!-- Custom styles -->
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link th:href="@{/css/main.css}" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" />
+<title>CloseStudy</title>
+</head>
+<body class="bg-light">
+	<div class="page-flex">
+		<div th:replace="fragments/sidebar :: sidebarCS"></div>
+		<div class="main-wrapper">
+			<nav class="navbar navbar-expand-md navbar-dark bg-secondary sticky-top">
+		<div class="container-fluid">
+			
+			<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+				
+					<form th:action="@{/logout}"method="post">
+					<div class="nav-item ms-3">
+					<span th:if="${session.estudiante!=null}">Hola <span class="font-italic" th:text="${session.estudiante.nomEstudiante}"></span></span>
+					<button type="submit"class="btn btn-dark button text-uppercase btn-padding-x-sm fw-bold">Cerrar sesion</button>	
+					</div >
+					</form>
+				
+			</div>
+		</div>
+		</nav>
+		<br><br>
+			<div class="container">
+    		<form th:action="@{/interes/registrar}" method="post" th:object="${Interes}">
+    			<div class="form-group">
+    				<label for="idInteres">ID:</label>
+    				<input type="text" class="form-control" th:field="*{idInteres}"></input>     
+
+    				<div class="form-group">
+    					<label for="nombre">Estudiante</label>
+    					<select class="form-control" th:field="*{estudiante.idEstudiante}">
+    						<option th:each="d: ${listaEstudiantes}"
+    							th:value="${d.idEstudiante}"
+    							th:text="${d.nomEstudiante}"
+    							th:selected="(${d.idEstudiante} == *{estudiante.idEstudiante})">
+    						</option>    					
+    					</select>
+    				</div>
+    				
+    				<div class="form-group">
+    					<label for="nombre">Aviso</label>
+    					<select class="form-control" th:field="*{aviso.idAviso}">
+    						<option th:each="a: ${listaAvisos}"
+    							th:value="${a.idAviso}"
+    							th:text="${a.habitacion.desHabitacion}"
+    							th:selected="(${a.idAviso} == *{aviso.idAviso})">
+    						</option>    					
+    					</select>
+    				</div>    
+   				
+    			</div>
+    			<button type="submit" class="btn btn-primary">Guardar</button>
+    			<a href="/interes/listar" class="btn btn-danger">Cancelar</a>
+    		</form>
+    	</div>
+    	<div th:replace="fragments/footer :: footer"></div>
+		</div>
+	</div>
+</body>
+</html>

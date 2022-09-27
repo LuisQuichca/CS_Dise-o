@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html><head> 
+<meta charset="UTF-8">
+	<title></title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+		<!-- Custom styles -->
+<link th:href="@{/css/registro.css}" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+
+</head>
+
+	<body>
+
+    	
+    	<form class="formulario" th:action="@{/auth/registroE}" method="post" th:object="${estudiante}">
+    
+    		<h1>Registrate</h1>
+    		<div class="contenedor">
+     
+     		<div class="input-contenedor">
+         		<i class="fas fa-user icon"></i>
+         		<input type="text" placeholder="Nombre Completo" class="form-control" th:field="*{nomEstudiante}" id="nombre">
+         		<div 	class="alert alert-danger" th:if="${#fields.hasErrors('nomEstudiante')}" 
+								th:errors="*{nomEstudiante}">
+				</div>
+         	</div>
+         	<div class="input-contenedor">
+         		<i class="fas fa-user icon"></i>
+         		<input type="text" placeholder="Apellido Completo" class="form-control" th:field="*{apeEstudiante}" id="nombre">
+         		<div 	class="alert alert-danger" th:if="${#fields.hasErrors('apeEstudiante')}" 
+								th:errors="*{apeEstudiante}">
+				</div>
+         	</div>
+         	<div class="input-contenedor">
+         		<i class="fas fa-id-card icon"></i>
+         		<input type="text" placeholder="DNI" class="form-control" th:field="*{dniEstudiante}" id="nombre">
+         		<div 	class="alert alert-danger" th:if="${#fields.hasErrors('dniEstudiante')}" 
+								th:errors="*{dniEstudiante}">
+				</div>
+         	</div>
+         	<div class="input-contenedor">
+         		<i class="fas fa-user icon"></i>
+         		<input type="text" placeholder="Edad" class="form-control" th:field="*{edadEstudiante}" id="nombre">
+         		<div 	class="alert alert-danger" th:if="${#fields.hasErrors('edadEstudiante')}" 
+								th:errors="*{edadArrendador}">
+				</div>
+         	</div>
+         	<div class="input-contenedor">
+         		<i class="fas fa-mobile-alt icon"></i>
+         		<input type="text" placeholder="Celular" class="form-control" th:field="*{celEstudiante}" id="nombre">
+         		<div 	class="alert alert-danger" th:if="${#fields.hasErrors('celEstudiante')}" 
+								th:errors="*{celEstudiante}">
+				</div>
+         	</div>
+         	<div class="input-contenedor">
+         		<i class="fas fa-envelope icon"></i>
+         		<input type="text" placeholder="Correo" class="form-control" th:field="*{emailEstudiante}" id="nombre">
+         		<div 	class="alert alert-danger" th:if="${#fields.hasErrors('emailEstudiante')}" 
+								th:errors="*{emailEstudiante}">
+				</div>
+         	</div>
+         	<div class="input-contenedor">
+         		<i class="fas fa-university icon"></i>
+         		
+         		<label for="nombre">Seleccione su Universidad</label>
+    					<select class="form-control" th:field="*{universidad.idUniversidad}">
+    						<option th:each="d: ${listaUniversidades}"
+    							th:value="${d.idUniversidad}"
+    							th:text="${d.nomUniversidad}"
+    							th:selected="(${d.idUniversidad} == *{universidad.idUniversidad})">
+    						</option>    					
+    					</select>
+         	</div>
+         	<div class="input-contenedor">
+         		<i class="fas fa-user icon"></i>
+         		<input type="text" placeholder="Usuario" class="form-control" th:field="*{username}" id="nombre">
+         		<div 	class="alert alert-danger" th:if="${#fields.hasErrors('username')}" 
+								th:errors="*{username}">
+				</div>
+         	</div>
+         	<div class="input-contenedor">
+        		<i class="fas fa-key icon"></i>
+         		<input type="password" placeholder="Contraseña" class="form-control" th:field="*{password}" id="nombre">
+         		<div 	class="alert alert-danger" th:if="${#fields.hasErrors('password')}" 
+								th:errors="*{password}">
+				</div>
+         	</div>
+         	
+         		<input type="submit" value="Registrate" class="button">
+         		<p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         		<p>¿Ya tienes una cuenta?<a class="link" href="/auth/login">Iniciar Sesion</a></p>
+         		
+     		</div>
+    	</form>
+
+</body>
+</html>
